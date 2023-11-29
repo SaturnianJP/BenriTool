@@ -1,0 +1,17 @@
+{
+  "name": "satania.benritool",
+  "displayName": "BenriTool",
+  "version": "1.6.1",
+  "description": "benritu----ru",
+  "dependencies": {},
+  "gitDependencies": {},
+  "vpmDependencies": {},
+  "author": {
+    "name": "satania",
+    "email": "saturnianbooth@gmail.com",
+    "url": "https://twitter.com/71s9"
+  },
+  "legacyFolders": {},
+  "legacyFiles": {},
+  "localPath": ""
+}

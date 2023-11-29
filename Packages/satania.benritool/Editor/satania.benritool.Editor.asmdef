@@ -1,0 +1,14 @@
+{
+  "name": "satania.benritool.Editor",
+  "references": [
+    "satania.benritool"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "autoReferenced": true,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "defineConstraints": [],
+  "optionalUnityReferences": []
+}
