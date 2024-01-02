@@ -278,12 +278,12 @@ namespace satania.benritool
             {
                 drawSizeLabel("マテリアルを参照するプレハブ", 13, true);
                 EditorGUI.BeginChangeCheck();
-                drawArray("_ref_prefabs", "元のプレハブ");
+                drawArray("_ref_prefabs", "マテリアルを引っ張るプレハブ");
 
                 GUILayout.Space(10);
 
                 //入れてもらう
-                drawArray("_prefabs", "コピーしたいプレハブたち");
+                drawArray("_prefabs", "マテリアルを貼っ付けるプレハブ");
 
                 GUILayout.Space(10);
 
