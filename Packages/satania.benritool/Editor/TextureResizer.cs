@@ -98,6 +98,8 @@ namespace satania.benritool
                 if (string.IsNullOrEmpty(path))
                     continue;
 
+                bool isNormalMap = false;
+
                 string filename = Path.GetFileNameWithoutExtension(path);
                 string dir = Path.GetDirectoryName(path);
                 string copiedPath = $"{dir}/{filename}_{resolution}_{resolution}.png";
@@ -111,6 +113,12 @@ namespace satania.benritool
                 if (!texImporter.isReadable)
                     texImporter.isReadable = true;
                 texImporter.textureCompression = TextureImporterCompression.Uncompressed;
+
+                isNormalMap = texImporter.textureType == TextureImporterType.NormalMap;
+                if (isNormalMap)
+                {
+                    texImporter.textureType = TextureImporterType.Default;
+                }
 
                 AssetDatabase.WriteImportSettingsIfDirty(path);
                 AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
@@ -131,10 +139,24 @@ namespace satania.benritool
                 EditorUtility.CopySerialized(texImporter, copiedtexImporter);
 
                 copiedtexImporter.maxTextureSize = resolution;
+                if (isNormalMap)
+                {
+                    copiedtexImporter.textureType = TextureImporterType.NormalMap;
+                }
+                
                 AssetDatabase.WriteImportSettingsIfDirty(copiedPath);
                 AssetDatabase.ImportAsset(copiedPath, ImportAssetOptions.ForceUpdate);
                 AssetDatabase.Refresh();
                 #endregion
+
+                if (isNormalMap)
+                {
+                    texImporter.textureType = TextureImporterType.NormalMap;
+                }
+
+                AssetDatabase.WriteImportSettingsIfDirty(path);
+                AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
+                AssetDatabase.Refresh();
             }
         }
     }
