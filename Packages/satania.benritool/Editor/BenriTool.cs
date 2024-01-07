@@ -29,6 +29,7 @@ namespace satania.benritool
         #region 設定用
         private string s_IsModelAutoSetter = "IsModelAutoSetter";
         private string s_IsTextureAutoSetter = "IsTextureAutoSetter";
+        private string s_IsTextureAutoResize = "IsTextureAutoResize";
         #endregion
 
         #region 関数
@@ -136,7 +137,7 @@ namespace satania.benritool
         }
         #endregion
 
-        #region Capture関数
+       #region Capture関数
 
         readonly int[,] prestSize = new int[,] { { 720, 480 }, { 1280, 720 }, { 1920, 1080 }, { 2560, 1440 }, { 3840, 2160 }, { 2048, 1080 }, { 4096, 2160 }, { 8192, 4320 } };
         private enum resPreset
@@ -165,7 +166,7 @@ namespace satania.benritool
 
         Vector2 captureSize = new Vector2(1920, 1080);
 
-        string ssSaveDir = "Assets/さたにあしょっぴんぐ/BenriTool/Capture/";
+        string ssSaveDir = "Assets/さたにあ/BenriTool/Capture/";
 
         private string doCapture()
         {
