@@ -35,7 +35,7 @@ namespace satania.benritool
         #region 関数
         private bool GetSettingValue(string name)
         {
-            string value = EditorUserSettings.GetConfigValue(s_IsModelAutoSetter);
+            string value = EditorUserSettings.GetConfigValue(name);
             return !string.IsNullOrEmpty(value) && value.Equals("True");
         }
 
