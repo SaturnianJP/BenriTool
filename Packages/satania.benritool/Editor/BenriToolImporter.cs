@@ -18,7 +18,7 @@ namespace satania.benritool
         #region 関数
         private static bool GetSettingValue(string name)
         {
-            string value = EditorUserSettings.GetConfigValue(s_IsModelAutoSetter);
+            string value = EditorUserSettings.GetConfigValue(name);
             return !string.IsNullOrEmpty(value) && value.Equals("True");
         }
 
@@ -152,7 +152,7 @@ namespace satania.benritool
             if (GetSettingValue(s_IsTextureAutoSetter))
             {
                 // AssetImporterをTextureImporterにキャスト
-                var importer = (UnityEditor.TextureImporter)assetImporter;
+                var importer = (TextureImporter)assetImporter;
 
                 importer.isReadable = true;
             }
